@@ -1,0 +1,27 @@
+---
+title: "Sentinel Auth Gateway"
+description: "A secure OAuth2 implementation focused on preventing session hijacking."
+github: "https://github.com/yourprofile/sentinel"
+live: "https://sentinel-demo.com"
+tags: ["Next.js", "Redis", "OAuth2", "Zod"]
+role: "Lead Systems Architect"
+securityStatement: "Implements strict PKCE flow and encrypted JWE tokens to prevent Man-in-the-Middle attacks."
+---
+
+## The Challenge
+Most standard auth implementations trust the client too much. For this project, I assume the client environment is compromised.
+
+
+
+## Architecture
+I chose a **Stateless JWT** approach but hardened it with **Redis-backed Refresh Token Rotation**. If a token is reused, the entire family is invalidated immediately.
+
+```typescript
+// Explicit rotation logic
+export async function rotateRefreshToken(token: string) {
+  const isRevoked = await redis.get(`revoked:${token}`);
+  if (isRevoked) {
+    await revokeAllFamilyTokens(token); // Nuclear option on suspected theft
+    throw new SecurityError("Replay attack detected");
+  }
+}

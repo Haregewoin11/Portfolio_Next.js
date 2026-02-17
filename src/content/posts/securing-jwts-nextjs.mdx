@@ -1,0 +1,30 @@
+---
+title: "Securing JWTs in Next.js 15"
+description: "A deep dive into stateless authentication and common pitfalls."
+date: "Feb 01, 2026"
+category: "Security"
+readTime: "6 min read"
+---
+
+# The Problem with Client-Side Storage
+
+As a software engineer, I assume that any data stored in `localStorage` is essentially public. If you are storing **JSON Web Tokens (JWTs)** there, you are vulnerable to XSS attacks.
+
+## The Solution: HttpOnly Cookies
+
+The most explicit and secure way to handle tokens in a **Next.js 15** environment is using `HttpOnly` cookies. This ensures the browser's JavaScript cannot access the token.
+
+```typescript
+// Example of setting a secure cookie in a Server Action
+import { cookies } from 'next/headers'
+
+export async function setSession(token: string) {
+  const cookieStore = await cookies()
+  
+  cookieStore.set('session', token, {
+    httpOnly: true,
+    secure: process.env.NODE_ENV === 'production',
+    sameSite: 'lax',
+    path: '/',
+  })
+}
