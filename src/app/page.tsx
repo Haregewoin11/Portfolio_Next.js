@@ -17,17 +17,17 @@ export default function Page() {
         </section>
 
         {/* Section 2: About / Experience */}
-        <section id="about" className="min-h-screen py-20 bg-zinc-900/30">
+        <section id="about" className="min-h-screen  bg-zinc-900/30">
           <AboutPage />
         </section>
 
         {/* Section 3: Projects */}
-        <section id="projects" className="min-h-screen py-20">
+        <section id="projects" className="min-h-screen">
           <ProjectsPage />
         </section>
 
         {/* Section 4: Contact */}
-        <section id="contact" className="min-h-screen py-20 bg-emerald-500/5">
+        <section id="contact" className="min-h-screen  bg-emerald-500/5">
           <Contact />
         </section>
         {/* <section id='blog' className='min-h-screen py-20'>
@@ -36,7 +36,7 @@ export default function Page() {
       </main>
 
       <footer className="py-10 text-center text-zinc-600 border-t border-zinc-900">
-        &copy; {new Date().getFullYear()} — Haregewoin W. <br/>Built with Next js
+        &copy; {new Date().getFullYear()} — Haregewoin W
       </footer>
     </div>
   )

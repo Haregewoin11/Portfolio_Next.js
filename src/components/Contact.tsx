@@ -111,11 +111,11 @@ const CV_URL = `https://axnphxsdbulaaapawego.supabase.co/storage/v1/object/sign/
           animate={{ opacity: 1, x: 0 }}
           className="flex flex-col justify-center"
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-500 text-[10px] font-mono uppercase tracking-widest mb-6 w-fit">
+          {/* <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-500 text-[10px] font-mono uppercase tracking-widest mb-6 w-fit">
             <Lock size={12} className="animate-pulse" /> get in touch
-          </div>
+          </div> */}
           
-          <h1 className="text-5xl md:text-7xl font-black tracking-tighter mb-6 leading-none">
+          <h1 className="text-4xl md:text-6xl font-black tracking-tighter mb-6 leading-none">
             LET&#39;S <span className="bg-clip-text text-transparent bg-linear-to-r from-emerald-400 to-cyan-400">CONNECT.</span>
           </h1>
           
@@ -126,7 +126,7 @@ const CV_URL = `https://axnphxsdbulaaapawego.supabase.co/storage/v1/object/sign/
               icon={Linkedin} 
               label="Professional" 
               username="Haregewoin Worku" 
-              href="https://www.linkedin.com/in/haregewoin-worku-7a304738a" 
+              href="https://www.linkedin.com/in/haregewoin-worku-1b0139245" 
               color="text-blue-400" 
             />
             <SocialTile 
