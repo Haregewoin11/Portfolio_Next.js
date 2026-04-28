@@ -104,9 +104,17 @@ export default async function ProjectsPage() {
                  <Github size={16} />
                </a>
              )}
-             <a href={project.live_url ?? `/projects/${project.slug}`} className="hover:text-emerald-400 transition-colors">
-               <ExternalLink size={16} />
-             </a>
+            {project.live_url && (
+  <a
+    href={project.live_url}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-zinc-700 hover:text-emerald-400 transition-colors"
+    aria-label="Live site"
+  >
+    <ExternalLink size={16} />
+  </a>
+)}
           </div>
         </div>
 
@@ -132,12 +140,12 @@ export default async function ProjectsPage() {
         <span className="text-[9px] font-mono uppercase tracking-[0.2em] text-zinc-600">
           {/* {project.security_focus } */}
         </span>
-        <Link
-          href={`/projects/${project.slug}`}
+        <a
+          href={project.live_url}
           className="text-[10px] font-bold text-emerald-500 hover:text-emerald-300 transition-colors flex items-center gap-1"
         >
           View  <ArrowUpRight size={12} />
-        </Link>
+        </a>
       </div>
     </div>
   </div>

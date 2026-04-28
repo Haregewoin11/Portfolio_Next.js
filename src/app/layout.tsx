@@ -6,8 +6,8 @@ import Navbar from "@/components/Navbar"; // Import our new Navbar
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Secure Full-Stack Portfolio",
-  description: "Built with Next.js 15 and a security-first mindset.",
+  title: "Portfolio",
+  description: "developers portfolio",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
